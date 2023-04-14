@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="../oocsi_lib.js"></script>
+<script src="../functions.js"></script>
+<script>
+    window.onload = () => makeConnectionIndu(lissen4switchCommand);
+
+    function lissen4switchCommand() {
+        OOCSI.subscribe(nameOfChannel, readCommand);
+    }
+    function readCommand(message) {
+        if (message.data.command == "switch") {
+            window.location.href = "step2_linear_indu.html";
+        }
+        console.log("receved message");
+        console.log(message.data);
+    }
+
+</script>
+
+<body>
+    <p>Look at the guiding phone.</p>
+</body>
+
+</html>

@@ -7,3 +7,4 @@ var OOCSI=function(){function y(){h("CONNECTING to "+w);k=new WebSocket(w);k.ono
     add_binary_sensor_brick:function(b,g,f,l,m){d[b]={};d[b].channel_name=g;d[b].type="binary_sensor";d[b].sensor_type=f;d[b].state=l;d[b].icon=m;h(`Added ${b} to the components list for device ${c}.`)},add_switch_brick:function(b,g,f,l,m){d[b]={};d[b].channel_name=g;d[b].type="switch";d[b].sensor_type=f;d[b].state=l;d[b].icon=m;h(`Added ${b} to the components list for device ${c}.`)},add_light_brick:function(b,g,f,l,m,u,J,K){d[b]={};d[b].channel_name=g;d[b].type="light";d[b].ledType=f;d[b].spectrum=
     l;d[b].min_max=m;d[b].state=u;d[b].brightness=J;d[b].icon=K;h(`Added ${b} to the components list for device ${c}.`)},submit:function(){OOCSI.send("heyOOCSI!",e)},sayHi:function(){OOCSI.send("heyOOCSI!",e)}}}}}();
     
+    const nameOfChannel = "LPtest";
