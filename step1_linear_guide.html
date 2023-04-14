@@ -7,10 +7,24 @@ function veranderplaatje() {
 }
 
 function makeConnection() {
-    // console.log("trying to connect!");
-    // OOCSI.connect("wss://oocsi.id.tue.nl"); 
+    console.log("trying to connect!");
+    OOCSI.connect("wss://oocsi.id.tue.nl/ws","phoneprotoguide"); 
+    OOCSI.subscribe("LPtest");
 }
-// window.onload = makeConnection;
+
+function onReceive(message) {
+    console.log(message);
+}
+
+function sendMessage() {
+    OOCSI.send("LPtest", {'a':"hoi", 'b':1});
+}
+
+function connectAndSend() {
+    makeConnection();
+    sendMessage();
+}
+window.onload = connectAndSend;
 
 function go2NextStep() {
     window.location.href = "step2_linear_guide.html";
