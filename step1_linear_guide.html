@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <script src="oocsi_lib.js"></script>
+    <script>
+function veranderplaatje() {
+    console.log("Test123"); 
+}
+
+function makeConnection() {
+    // console.log("trying to connect!");
+    // OOCSI.connect("wss://oocsi.id.tue.nl"); 
+}
+// window.onload = makeConnection;
+
+function go2NextStep() {
+    window.location.href = "step2_linear_guide.html";
+    
+}
+
+    </script>
+    <body>
+        <h1>Hello, I'm the guiding phone. </h1>
+        <h2>The 1st level of the framework is the Linear mapped interactions.</h2>
+        <p>Do A &rarr; B happens</p>
+        <button onclick="go2NextStep()"> Bring me to the next step! </button>
+    </body>
+</html>
