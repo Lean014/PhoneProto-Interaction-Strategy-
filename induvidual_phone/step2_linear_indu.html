@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="../oocsi_lib.js"></script>
+    <script src="../functions.js"></script>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>step2Indu</title>
 </head>
 <script>
+    window.onload = () => makeConnectionIndu(()=>{}); // empty do nothing when message is send in channel
+
+function go2img24() {
+    OOCSI.send(nameOfChannel, {'a':"hoi", 'b':1});
+
+    window.location.href = "step2b_indu.html";
+}
 
 </script>
 <body>
-    <img src="..\images\workshop cards-24.png" alt="button">
+    <img onclick="go2img24()" src="..\images\workshop cards-24.png" alt="button">
 </body>
 </html>
