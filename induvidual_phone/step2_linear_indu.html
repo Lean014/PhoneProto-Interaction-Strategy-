@@ -13,7 +13,7 @@
     window.onload = () => makeConnectionIndu(()=>{}); // empty do nothing when message is send in channel
 
 function go2img24() {
-    OOCSI.send(nameOfChannel, {'a':"hoi", 'b':1});
+    OOCSI.send(nameOfChannel, {'command':"+1"}); //number of button presses = command. needs to be short to limmit typos
 
     window.location.href = "step2b_indu.html";
 }
