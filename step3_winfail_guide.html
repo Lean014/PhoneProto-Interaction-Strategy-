@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+    <script src="functions.js"></script>
+    <script src="oocsi_lib.js"></script>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,8 +10,12 @@
 </head>
 <script>
         function go2step4() {
+        OOCSI.send(nameOfChannel, {'command': "switch"});//send message to OOCSI
         window.location.href = "step4_winfail_guide.html";
     }
+    window.onload = makeConnection; //login to OOCSI
+
+
 </script>
 <body>
     <h1>Hello, I'm the guiding phone. </h1>

@@ -22,14 +22,14 @@ function connectAndSend() {
 window.onload = connectAndSend;
 
 function go2NextStep() {
-    window.location.href = "step2_linear_guide.html";
+    window.location.href = "step2_linear_guide.html"; //go to other page 
 }
 
 function sent2OOCSIandGo2Step2() {
     induGo2step2();
     go2NextStep();
 }
-function induGo2step2() {
+function induGo2step2() { //send OOCSI message
     OOCSI.send(nameOfChannel, {'command': "switch"});
 }
 

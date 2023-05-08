@@ -24,15 +24,25 @@
     }
     window.onload = onLoadPage;
 
-    function go2WinFail() {
+
+    function go2step3Guide() {
         window.location.href = "step3_winfail_guide.html";
     }
+    function go2step3Indu() {
+    OOCSI.send(nameOfChannel, {'command': "switch"});
+    console.log ("did it send?");
+}
+function sent2OOCSIandGo2Step3() {
+    go2step3Indu();
+    go2step3Guide();
+}
     
 </script>
 <body>
     <img src="images\workshop cards-01.png" alt="press button image">
     <p>Pressed buttons:</p>
     <p id="pressCount">0</p>
-    <button onclick="go2WinFail()">Bring me to the next step!</button>
+    <button onclick="sent2OOCSIandGo2Step3()">Bring me to the next step!</button> 
+    <!-- between " " for JS in HTML only for onclick, inline handeler  -->
 </body>
 </html>

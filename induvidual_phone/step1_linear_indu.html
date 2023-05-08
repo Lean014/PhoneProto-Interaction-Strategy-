@@ -10,9 +10,12 @@
 <script src="../oocsi_lib.js"></script>
 <script src="../functions.js"></script>
 <script>
-    window.onload = () => {makeConnectionIndu(lissen4switchCommand);
-    nameGenerator(); // call name generate function here
-    };
+
+    function whenLoadingPage() { //connect to OOSCI and send commands
+        makeConnectionIndu(lissen4switchCommand); 
+        nameGenerator(); // call name generate function here
+    }
+    window.onload = whenLoadingPage;
 
     function lissen4switchCommand() {
         OOCSI.subscribe(nameOfChannel, readCommand);

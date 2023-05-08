@@ -10,13 +10,21 @@
     <title>step2Indu</title>
 </head>
 <script>
-    window.onload = () => makeConnectionIndu(()=>{}); // empty do nothing when message is send in channel
+    window.onload = () => makeConnectionIndu(readCommand); // empty do nothing when message is send in channel
 
 function go2img24() {
     OOCSI.send(nameOfChannel, {'command':"+1"}); //number of button presses = command. needs to be short to limmit typos
 
     window.location.href = "step2b_indu.html";
 }
+
+function readCommand(message) { //COPY of page  step2b_indu
+        if (message.data.command == "switch") { //meaby make command unique to page
+            window.location.href = "step3_indu.html"; // this too
+        }
+        console.log("receved message");
+        console.log(message.data);
+    }
 
 </script>
 <body>
