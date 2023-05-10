@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
+    <script src="functions.js"></script>
+    <script src="oocsi_lib.js"></script>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,14 +9,30 @@
     <title>Document</title>
 </head>
 <script>
-    function go2MultipleDecisionPoints() {
+        function onLoadPage () {
+        makeConnection(); // OOCSI connection
+    }
+    window.onload = onLoadPage;
+
+
+    function go2MultipleDecisionPointsStep5Guide() { // button bring me to the next step link
         window.location.href = "step5_MultipleDecisionPoint_guide.html";
+    }
+
+    function go2step5Indu() { //go to link, step 5 indu, look at the guiding phone.
+    OOCSI.send(nameOfChannel, {'command': "switch"});
+    console.log ("did it send?");
+    }
+
+    function sent2OOCSIandGo2Step5() { //combining two functions
+    go2step5Indu();
+    go2MultipleDecisionPointsStep5Guide();
     }
 
 </script>
 <body>
     <h1 id="countdown">Countdown! Look at your phone...</h1> <!-- get element id by name -->
     <img src="images\workshop cards-05.png" alt="image of slide">
-   <button onclick="go2MultipleDecisionPoints()"> Bring me to the next step! </button> 
+   <button onclick="sent2OOCSIandGo2Step5()"> Bring me to the next step! </button> 
 </body>
 </html>

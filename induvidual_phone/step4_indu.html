@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-
+    <script src="../oocsi_lib.js"></script>  <!-- OOSCI -->
+    <script src="../functions.js"></script>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -53,6 +54,17 @@
     <h1 id="countdown">Countdown!</h1>
     <img onclick="winfail(secondsLeft)" src="..\images\workshop cards-24.png" alt="image of button">
     <h2> Press the button at number zero! </h2>
+
+    <script> // OOSCI
+               makeConnectionIndu(readMessage);  
+       function readMessage(message) { //OOCSI receive code here
+        if (message.data.command == "switch") {
+        window.location.href = "step5_indu.html";
+        }
+        console.log("receved message");
+        console.log(message.data);
+    }
+    </script>
 </body>
 
 </html>

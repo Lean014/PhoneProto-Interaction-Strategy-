@@ -1,12 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+<script src="../oocsi_lib.js"></script>  <!-- OOSCI -->
+<script src="../functions.js"></script>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Step 4 fail indu</title>
 </head>
+
 <body>
     <img src="..\images\workshop cards-28.png" alt="Waterslide with a water spray.">
+    <script>
+       makeConnectionIndu(readMessage);  
+       function readMessage(message) { //OOCSI receive code here
+        if (message.data.command == "switch") {
+        window.location.href = "step5_indu.html";
+        }
+        console.log("receved message");
+        console.log(message.data);
+    }
+    </script>
 </body>
+
 </html>
