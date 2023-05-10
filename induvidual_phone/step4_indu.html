@@ -1,33 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Step 4 Indu</title>
 </head>
 <script>
+    let secondsLeft; // global 
     function startTimer10s() {
-        const timeDuration = 10;
+        const timeDuration = 10; //start at 10 seconds 
         const timeBetweenLoops = 1000;
-        let secondsLeft = timeDuration;
-       let timerLoop = setInterval(() => {
+        secondsLeft = timeDuration; //mutation or adaptive varable
+
+        function iWillBeLooped() { //a loop that counts down
             console.log(secondsLeft);
-            document.getElementById("countdown").innerHTML = secondsLeft;
+            if (secondsLeft >= 0) document.getElementById("countdown").innerHTML = secondsLeft;
             secondsLeft--;
 
-            if (secondsLeft < 0){
-                clearInterval(timerLoop);
-                document.getElementById("countdown").innerHTML = "Time done!"; 
+            if (secondsLeft < 0) {
+                document.getElementById("countdown").innerHTML = "Time done!";
             }
-
-        }, timeBetweenLoops);
+            if (secondsLeft < -5) {
+                clearInterval(timerLoop);
+                window.location.href = "step4f_indu.html"; // if presset to early (or late) go 2 fail screen
+            }
+        }
+        let timerLoop = setInterval(iWillBeLooped, timeBetweenLoops);
     }
     window.onload = startTimer10s;
 
+    function winfail(timeParam) {
+        if (timeParam <= 1 && timeParam >= 0) { //if less than 1 secon is left and button is pressed
+            window.location.href = "step4w_indu.html"; //go 2 win screen
+            console.log("win senario");
+        }
+        else if (timeParam > 1) {
+            window.location.href = "step4f_indu.html"; // if presset to early (or late) go 2 fail screen
+            console.log("fail senario");
+        }
+        else {
+            window.location.href = "step4f_indu.html"; // if presset to early (or late) go 2 fail screen
+            console.log("somthing else happend, go to fail senario"); // what to do here?
+        }
+
+    }
+
 </script>
+
 <body>
     <h1 id="countdown">Countdown!</h1>
-    <img src="images\workshop cards-24.png" alt="image of button">
+    <img onclick="winfail(secondsLeft)" src="..\images\workshop cards-24.png" alt="image of button">
+    <h2> Press the button at number zero! </h2>
 </body>
+
 </html>
