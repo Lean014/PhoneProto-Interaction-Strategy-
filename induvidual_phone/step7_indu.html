@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,20 +11,21 @@
 <script src="../functions.js"></script>
 
 <body>
-    <img src="../images/workshop cards-32.png" alt="dolphins">
-    <h2>You landed in the shart thank!</h2>
+    <p>Look at the guiding phone step7.</p>
 
     <script>
+    
         //OOCSI code here
-        makeConnectionIndu(readMessage);
-        function readMessage(message) { //OOCSI receive code here
-            if (message.data.command == "switch") {
-                window.location.href = "step7_indu.html";
+        makeConnectionIndu(readCommand);  // i make a connection to OOCSI
+        function readCommand(message) {
+            if (message.data.command == "switch") { //meaby make command unique to page
+                window.location.href = "step8_indu.html"; // is this link correct?????????????????
             }
             console.log("receved message");
             console.log(message.data);
         }
+    
     </script>
-
 </body>
+
 </html>

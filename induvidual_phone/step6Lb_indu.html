@@ -6,8 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<script src="../oocsi_lib.js"></script>
+<script src="../functions.js"></script>
+
 <body>
     <img src="../images/workshop cards-34.png" alt="dolphins">
     <h2>You landed in the dolphin thank!</h2>
+    <script>
+        //OOCSI code here
+        makeConnectionIndu(readMessage);
+        function readMessage(message) { //OOCSI receive code here
+            if (message.data.command == "switch") {
+                window.location.href = "step7_indu.html";
+            }
+            console.log("receved message");
+            console.log(message.data);
+        }
+    </script>
 </body>
 </html>

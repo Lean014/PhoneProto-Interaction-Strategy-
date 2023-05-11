@@ -18,7 +18,15 @@
     </map>
 
     <script>
-    // code
+        //OOCSI code here
+        makeConnectionIndu(readMessage);
+        function readMessage(message) { //OOCSI receive code here
+            if (message.data.command == "switch") {
+                window.location.href = "step7_indu.html";
+            }
+            console.log("receved message");
+            console.log(message.data);
+        }
     </script>
 
 </body>
