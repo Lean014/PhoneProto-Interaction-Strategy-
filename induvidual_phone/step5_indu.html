@@ -9,22 +9,23 @@
 </head>
 <script src="../oocsi_lib.js"></script>
 <script src="../functions.js"></script>
-<script>
-    window.onload = () => {makeConnectionIndu(readCommand);
-    };
-
-    function readCommand(message) {
-        if (message.data.command == "switch") { //meaby make command unique to page
-            window.location.href = "step6_indu.html"; // this too
-        }
-        console.log("receved message");
-        console.log(message.data);
-    }
-
-</script>
 
 <body>
     <p>Look at the guiding phone 5.</p>
+
+    <script>
+    
+        //OOCSI code here
+        makeConnectionIndu(readCommand);  // i make a connection to OOCSI
+        function readCommand(message) {
+            if (message.data.command == "switch") { //meaby make command unique to page
+                window.location.href = "step6_indu.html"; // is this link correct?????????????????
+            }
+            console.log("receved message");
+            console.log(message.data);
+        }
+    
+    </script>
 </body>
 
 </html>

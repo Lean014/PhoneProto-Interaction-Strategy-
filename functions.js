@@ -15,7 +15,7 @@ function makeConnectionIndu(onReceive) {
     OOCSI.subscribe(nameOfChannel, onReceive);
 }
 
-function nameGenerator() {
+function nameGenerator() { //timestamp date.now
     const randomNumb = Math.random()*10000; //bteween 0 and 0 so times 10000. let is variable. const is constant
     const randomNumbRound = Math.floor(randomNumb); //make it a round number. 
     const userName = "indu"+randomNumbRound;

@@ -9,24 +9,24 @@
     <title>Document</title>
 </head>
 <script>
-        function onLoadPage () {
+    function onLoadPage () {
         makeConnection(); // OOCSI connection
     }
+    
     window.onload = onLoadPage;
-
 
     function go2MultipleDecisionPointsStep5Guide() { // button bring me to the next step link
         window.location.href = "step5_MultipleDecisionPoint_guide.html";
     }
 
     function go2step5Indu() { //go to link, step 5 indu, look at the guiding phone.
-    OOCSI.send(nameOfChannel, {'command': "switch"});
-    console.log ("did it send?");
+        OOCSI.send(nameOfChannel, {'command': "switch"});
+        console.log ("did it send?");
     }
 
     function sent2OOCSIandGo2Step5() { //combining two functions
-    go2step5Indu();
-    go2MultipleDecisionPointsStep5Guide();
+        go2step5Indu();
+        go2MultipleDecisionPointsStep5Guide();
     }
 
 </script>
