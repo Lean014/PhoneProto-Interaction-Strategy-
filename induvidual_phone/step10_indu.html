@@ -11,24 +11,26 @@
 <script src="../functions.js"></script>
 
 <body>
-    <a href="step10w_indu.html">
-        <img src="../images/workshop cards-24.png" alt="illustration of button">
-    </a>
+    <img onclick="groupButton()" id="buttonStep10" src="../images/workshop cards-24.png" alt="illustration of button">
+
     <script>
         // als er geklikt word op het plaatje: 
         //      oocsi bericht sture
         //      uitschakelen van knop
         //      timeout.delay knop weer activeeren met set time-out
 
-        //OOCSI code here
-        makeConnectionIndu(readCommand);  // i make a connection to OOCSI
-        function readCommand(message) {
-            if (message.data.command == "switch") { //meaby make command unique to page
-                window.location.href = "stepx_indu.html"; // is this link correct?????????????????
-            }
-            console.log("receved message");
-            console.log(message.data);
+        function groupButton() {
+            console.log ("click!");
+            OOCSI.send(nameOfChannel, { 'command': "groupButtonP" }); //send a message to OOCSI
+            document.getElementById("buttonStep10").onclick = null; //decctivate clikking 
+            //timout
+            window.setTimeout(function reactivateButton() { //function in between ()
+                document.getElementById("buttonStep10").onclick = groupButton; //activate clikking
+                console.log("reactivateButton");
+            }, 2000); // 2 seconds of timing // timeout done
         }
+
+        makeConnectionIndu(); //login to OOCSI indu
 
     </script>
 </body>
