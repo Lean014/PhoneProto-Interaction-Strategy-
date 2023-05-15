@@ -20,17 +20,7 @@
     <h1>Quiz End! </h1>
     <button onclick="go2step1()"> Bring me to start! </button>
     <script>
-
         //OOCSI code here
-        makeConnectionIndu(readCommand);  // i make a connection to OOCSI
-        function readCommand(message) {
-            if (message.data.command == "switch") { //meaby make command unique to page
-                window.location.href = "step1_linear_indu.html"; //bug
-            }
-            console.log("receved message");
-            console.log(message.data);
-        }
-
     </script>
 </body>
 

@@ -20,7 +20,7 @@
         //      timeout.delay knop weer activeeren met set time-out
 
         function groupButton() {
-            console.log ("click!");
+            console.log("click!");
             OOCSI.send(nameOfChannel, { 'command': "groupButtonP" }); //send a message to OOCSI
             document.getElementById("buttonStep10").onclick = null; //decctivate clikking 
             //timout
@@ -30,7 +30,14 @@
             }, 2000); // 2 seconds of timing // timeout done
         }
 
-        makeConnectionIndu(); //login to OOCSI indu
+        makeConnectionIndu(readCommand);  //make a connection to OOCSI
+        function readCommand(message) {
+            if (message.data.command == "switch10") { //meaby make command unique to page
+                window.location.href = "step11_end_indu.html"; // is this link correct?????????????????
+            }
+            console.log("receved message");
+            console.log(message.data);
+        }
 
     </script>
 </body>

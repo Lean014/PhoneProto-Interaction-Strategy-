@@ -10,24 +10,14 @@
 <script src="../oocsi_lib.js"></script>
 <script src="../functions.js"></script>
 <script>
-
-    function whenLoadingPage() { //connect to OOSCI and send commands
-        makeConnectionIndu(lissen4switchCommand); 
-        nameGenerator(); // call name generate function here
-    }
-    window.onload = whenLoadingPage;
-
-    function lissen4switchCommand() {
-        OOCSI.subscribe(nameOfChannel, readCommand);
-    }
+    makeConnectionIndu(readCommand);
     function readCommand(message) {
-        if (message.data.command == "switch") {
+        if (message.data.command == "switch1") {
             window.location.href = "step2_linear_indu.html";
         }
         console.log("receved message");
         console.log(message.data);
     }
-
 </script>
 
 <body>

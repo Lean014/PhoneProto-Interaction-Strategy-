@@ -1,32 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>start0</title>
 </head>
 <script src="../oocsi_lib.js"></script>
 <script src="../functions.js"></script>
 
 <body>
-    <a href="step11_end_indu.html">
-        <img src="../images/workshop cards-26.png" alt="small water spray">
-    </a>
+    <h1>Welcome to the interaction strategies experience!</h1>
+    <!-- <h2><i>Phillips phone</i></h2> -->
+    <!-- <button onclick="go2Start1Indu()">Connect to the guiding phone.</button> -->
+    
     <script>
-
         //OOCSI code here
-        makeConnectionIndu(readCommand);  // i make a connection to OOCSI
-        function readCommand(message) {
-            if (message.data.command == "switch") { //meaby make command unique to page
-                window.location.href = "stepx.html"; // is this link correct?????????????????
+        makeConnectionIndu(readMessage);
+        function readMessage(message) { //OOCSI receive code here
+            if (message.data.command == "start") {
+                window.location.href = "step1_linear_indu.html";
             }
             console.log("receved message");
             console.log(message.data);
         }
-
     </script>
 </body>
-
 </html>
