@@ -11,7 +11,7 @@
     <title>step 10</title>
 </head>
 <body>
-    <img src="images\workshop cards-01.png" alt="press button image">
+    <img src="images\workshop cards-01.png" id= "group" alt="press button image">
     <p>Press the buttons at the same time.</p>
     <button onclick="go2step11()">Bring me to the end!</button>
 
@@ -31,9 +31,10 @@
                 clicksAtOnce++; //count the amount of clicks
                 if (clicksAtOnce == partisipantCount) { 
                         console.log("jeej het is gelukt"); //show big fountain
+                        document.getElementById("group").src="images\\workshop cards-25.png"; 
                 }
                 else {
-                    window.location.href = ""; //show small fountain
+                    document.getElementById("group").src="images\\workshop cards-26.png";
                 }
                 window.setTimeout(clicksReset, 1000) //1 seconden
             }
