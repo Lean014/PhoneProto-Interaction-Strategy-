@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="../oocsi_lib.js"></script>
+<script src="../functions.js"></script>
+
+<script>
+    function go2step1() {
+        window.location.href = "start0_indu.html";
+    }
+</script>
+
+<body>
+    <h1>Quiz End! </h1>
+    <button onclick="go2step1()"> Bring me to start! </button>
+    <script>
+
+        //OOCSI code here
+        makeConnectionIndu(readCommand);  // i make a connection to OOCSI
+        function readCommand(message) {
+            if (message.data.command == "switch") { //meaby make command unique to page
+                window.location.href = "step1_linear_indu.html"; //bug
+            }
+            console.log("receved message");
+            console.log(message.data);
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script src="../oocsi_lib.js"></script>
+<script src="../functions.js"></script>
+
+<body>
+    
+    <p> Make up your underwatername and send it to the guiding phone.</p>
+    <input type="text" id="h2oName" value="My underwater name is ...">
+    <button onclick ="sendName()"> Send my underwater name! </button> 
+    <script>
+        function sendName() {
+            const nameInput = document.getElementById("h2oName").value;
+            OOCSI.send(nameOfChannel, {data:nameInput});
+        }
+    
+        //OOCSI code here
+        makeConnectionIndu(readCommand);  // i make a connection to OOCSI
+        function readCommand(message) {
+            if (message.data.command == "switch") { //meaby make command unique to page
+                window.location.href = "step9_indu.html"; // is this link correct?????????????????
+            }
+            console.log("receved message");
+            console.log(message.data);
+        }
+    
+    </script>
+</body>
+</html>

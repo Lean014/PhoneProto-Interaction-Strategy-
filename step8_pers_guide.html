@@ -1,24 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+<!-- OOCSI -->
+<script src="functions.js"></script>
+<script src="oocsi_lib.js"></script>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<script>
-    function sendUnderwaterName() {
-    const entertName = document.getElementById("uwname").value;
-    }
-    function go2step8() {
-        window.location.href = "step9_group_guide.html";
-    }
-</script>
+
 <body>
     <h1>Welcome!</h1>
-    <h2>Your underwater appears name here.</h2>
+    <h2>Your underwater name here.</h2>
     <h3> What is your underwater name?</h3>
+    <div id="namesHere"> </div>
 
-    <button onclick="(go2step8)"> Waiting for all underwaternames...</button>
+    <button onclick="sent2OOCSIandGo2Step9()"> Waiting for all underwaternames...</button>
+
+    <script> // javascript
+
+        function sent2OOCSIandGo2Step9() { //Go to link, step X indu, look at the guiding phone.
+            OOCSI.send(nameOfChannel, { 'command': "switch" });
+            window.location.href = "step9_group_guide.html";
+        }
+        makeConnection(receiveUnderwaterName); //login to OOCSI
+
+        function receiveUnderwaterName(message) {
+            const receivedName = message.data.data;
+            if (receivedName != undefined && receivedName != "My underwater name is ...") { 
+                const para = document.createElement("h2");
+                const node = document.createTextNode(receivedName);
+                para.appendChild(node);
+
+                const element = document.getElementById("namesHere");
+                element.appendChild(para);
+            }
+        }
+    </script>
 </body>
+
 </html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step9_indu</title>
+</head>
+<script src="../oocsi_lib.js"></script>
+<script src="../functions.js"></script>
+
+<body>
+    <p>Look at the guiding phone step9.</p>
+
+    <script>
+    
+        //OOCSI code here
+        makeConnectionIndu(readCommand);  // i make a connection to OOCSI
+        function readCommand(message) {
+            if (message.data.command == "switch") { //meaby make command unique to page
+                window.location.href = "step10_indu.html"; // is this link correct?????????????????
+            }
+            console.log("receved message");
+            console.log(message.data);
+        }
+    
+    </script>
+</body>
+
+</html>

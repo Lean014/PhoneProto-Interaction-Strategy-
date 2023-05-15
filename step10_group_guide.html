@@ -1,12 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+    <!-- OOCSI -->
+<script src="functions.js"></script>
+<script src="oocsi_lib.js"></script>
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>step 2</title>
+    <title>step 10</title>
 </head>
 <script>
+// global var aantal keer geklikt
+// elke keer oocsi berich binnen timout reset, wanneer klick timout reset, 
+// functie oocsi callback, functie doorgeven aan functie onreceive
+// In on recieve callback on reisive, ckeck of bericht juist is. als juist ++, , start set timeout to reset aantal kliks, 
+
     function go2step11() {
         window.location.href = "step11_end_guide.html";
     }
@@ -14,6 +23,6 @@
 <body>
     <img src="images\workshop cards-01.png" alt="press button image">
     <p>Press the buttons at the same time.</p>
-    <button onclick="go2step11()">Bring me to the next step!</button>
+    <button onclick="go2step11()">Bring me to the end!</button>
 </body>
 </html>
