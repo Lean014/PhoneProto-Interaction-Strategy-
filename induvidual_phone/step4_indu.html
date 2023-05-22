@@ -34,15 +34,18 @@
 
     function winfail(timeParam) {
         if (timeParam <= 1 && timeParam >= 0) { //if less than 1 secon is left and button is pressed
+            OOCSI.send(nameOfChannel, {'command':"win"}); // net erbij gezet
             window.location.href = "step4w_indu.html"; //go 2 win screen
             console.log("win senario");
         }
         else if (timeParam > 1) {
             window.location.href = "step4f_indu.html"; // if presset to early (or late) go 2 fail screen
+            OOCSI.send(nameOfChannel, {'command':"fail"});
             console.log("fail senario");
         }
         else {
             window.location.href = "step4f_indu.html"; // if presset to early (or late) go 2 fail screen
+            OOCSI.send(nameOfChannel, {'command':"fail"});
             console.log("somthing else happend, go to fail senario"); // what to do here?
         }
 
