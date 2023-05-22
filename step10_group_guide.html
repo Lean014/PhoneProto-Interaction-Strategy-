@@ -26,11 +26,11 @@
         //OOCSI indu code here
         makeConnection(readCommand);  // i make a connection to OOCSI guide
         function readCommand(message) {
-            if (message.data.command == "groupButtonP") { //meaby make command unique to page
-                window.clearTimeout(timeOutHandler); //StopTimer or recet timer
+            if (message.data.command == "groupButtonP") { // make command unique to page
+                window.clearTimeout(timeOutHandler); //StopTimer or reset timer
                 clicksAtOnce++; //count the amount of clicks
                 if (clicksAtOnce == partisipantCount) { 
-                        console.log("jeej het is gelukt"); //show big fountain
+                        console.log("jeej it worked"); //show big fountain
                         document.getElementById("group").src="images\\workshop cards-25.png"; 
                 }
                 else {

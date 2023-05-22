@@ -16,33 +16,53 @@
         pressCountIndu2 ++;
         console.log(pressCountIndu2);
         document.getElementById("pressCount").innerHTML = pressCountIndu2;
+        addImg();
     } 
     }
-
+    function readCommand(message) {
+        if (message.data.command == "water") {
+            document.getElementById("waterSpray").src="images\\workshop cards-26.png"; //only show when button is pressed HIER GEBLEVEN
+        }
+    }
     function onLoadPage () {
         makeConnection(buttonPressCounting); // OOCSI connection and sending valus of button press counting
     }
     window.onload = onLoadPage;
-
-    function go2step3Guide() {
-        window.location.href = "step3_winfail_guide.html";
-    }
-    
-    function go2step3Indu() {
-    OOCSI.send(nameOfChannel, {'command': "switch2"});
-    console.log ("did it send?");
-}
-function sent2OOCSIandGo2Step3() {
-    go2step3Indu();
-    go2step3Guide();
-}
     
 </script>
 <body>
     <img src="images\workshop cards-01.png" alt="press button image">
     <p>Pressed buttons:</p>
     <p id="pressCount">0</p>
+    <div id="imgShow"></div>
+
+    <!-- show image next to indu pressed button
+    <img src="images\\workshop cards-26.png" id= waterSpray alt="water spary">  -->
     <button onclick="sent2OOCSIandGo2Step3()">Bring me to the next step!</button> 
     <!-- between " " for JS in HTML only for onclick, inline handeler  -->
+    <script>
+        
+        function addImg() { //insead of using appendChild and call in other function that reads message from OOCSI
+        //make a new img element
+        const waterSprayimg = document.createElement("img");
+
+        //source img
+        waterSprayimg.setAttribute("src","images\\workshop cards-26.png");
+
+        //html tag location
+        const bestemming = document.getElementById("imgShow");
+
+        //place image on location
+        bestemming.appendChild(waterSprayimg);
+            
+        }
+
+        //  function to go to next page 
+        //makeConnection();
+       function sent2OOCSIandGo2Step3() {
+           OOCSI.send(nameOfChannel, { 'command': "switch2" });
+           window.location.href = "step3_winfail_guide.html";
+       }
+    </script>
 </body>
 </html>
