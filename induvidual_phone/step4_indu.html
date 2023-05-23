@@ -39,13 +39,13 @@
             console.log("win senario");
         }
         else if (timeParam > 1) {
-            window.location.href = "step4f_indu.html"; // if presset to early (or late) go 2 fail screen
             OOCSI.send(nameOfChannel, {'command':"fail"});
+            window.location.href = "step4f_indu.html"; // if presset to early (or late) go 2 fail screen
             console.log("fail senario");
         }
         else {
-            window.location.href = "step4f_indu.html"; // if presset to early (or late) go 2 fail screen
             OOCSI.send(nameOfChannel, {'command':"fail"});
+            window.location.href = "step4f_indu.html"; // if presset to early (or late) go 2 fail screen
             console.log("somthing else happend, go to fail senario"); // what to do here?
         }
 

@@ -13,6 +13,7 @@
 <body>
     <img src="images\workshop cards-01.png" id= "group" alt="press button image">
     <p>Press the buttons at the same time.</p>
+    <!-- <div id="imgShow"></div> -->
     <button onclick="sent2OOCSIandGo2Step11()">Bring me to the end!</button>
 
     <script>
@@ -23,6 +24,8 @@
         const partisipantCount = 2;
         let clicksAtOnce = 0;
         let timeOutHandler; // let time life after function
+        //image appear functions here
+
         //OOCSI indu code here
         makeConnection(readCommand);  // i make a connection to OOCSI guide
         function readCommand(message) {
@@ -34,7 +37,7 @@
                         document.getElementById("group").src="images\\workshop cards-25.png"; 
                 }
                 else {
-                    document.getElementById("group").src="images\\workshop cards-26.png";
+                    document.getElementById("group").src="images\\workshop cards-26.png"; //show small/regular fountain
                 }
                 window.setTimeout(clicksReset, 1000) //1 seconden
             }
