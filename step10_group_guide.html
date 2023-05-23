@@ -50,7 +50,7 @@
     
         //  function to go to next page 
        function sent2OOCSIandGo2Step11() {
-           OOCSI.send(nameOfChannel, { 'command': "switch10" });
+           OOCSI.send(nameOfChannel, {'command':"switch10","link":"step11_end_indu.html"});
            window.location.href = "step11_end_guide.html";
        }
     </script>

@@ -20,34 +20,31 @@
     <script> // javascript
 
         function sent2OOCSIandGo2Step7() { //Go to link, step X indu, look at the guiding phone.
-            OOCSI.send(nameOfChannel, { 'command': "switch6" });
+            OOCSI.send(nameOfChannel, {'command':"switch6","link":"step7_indu.html"});
             window.location.href = "step7_pers_guide.html";
         }
         makeConnection(readCommandAndShowImg); // OOCSI connection and argument to the immage appearings function
 
         function readCommandAndShowImg(message) {
             if (message.data.command == "dolphin"){
-                addImgD();
+                addImg("images\\workshop cards-34.png");
             }
             else if (message.data.command == "whirl"){
-                addImgWhirl();
+                addImg("images\\workshop cards-33.png");
             }
             else if (message.data.command == "shark"){
-                addImgS();
-            }
-            else{
-                addImgD(); // is this needed als safeguard, dolphins for happieness
+                addImg("images\\workshop cards-32.png");
             }
         }
 
         //image functions and locations below
 
-        function addImgD() { //insead of using appendChild and call in other function that reads message from OOCSI
+        function addImg(imageLocation) { //insead of using appendChild and call in other function that reads message from OOCSI
             //make a new img element
             const waterSprayimg = document.createElement("img");
 
             //source img
-            waterSprayimg.setAttribute("src", "images\\workshop cards-34.png");
+            waterSprayimg.setAttribute("src", imageLocation); //images\\workshop cards-34.png dolphin
 
             //html tag location
             const location = document.getElementById("imgShow");
@@ -56,35 +53,7 @@
             location.appendChild(waterSprayimg);
 
         }
-        function addImgWhirl() { //insead of using appendChild and call in other function that reads message from OOCSI
-            //make a new img element
-            const waterSprayimg = document.createElement("img");
 
-            //source img
-            waterSprayimg.setAttribute("src", "images\\workshop cards-33.png");
-
-            //html tag location
-            const location = document.getElementById("imgShow");
-
-            //place image on location
-            location.appendChild(waterSprayimg);
-
-        }
-        function addImgS() { //insead of using appendChild and call in other function that reads message from OOCSI
-            //make a new img element
-            const waterSprayimg = document.createElement("img");
-
-            //source img
-            waterSprayimg.setAttribute("src", "images\\workshop cards-32.png");
-
-            //html tag location
-            const location = document.getElementById("imgShow");
-
-            //place image on location
-            location.appendChild(waterSprayimg);
-
-        }
-        
     </script>
 </body>
 

@@ -22,7 +22,7 @@
     <script> // javascript
 
         function sent2OOCSIandGo2Step9() { //Go to link, step X indu, look at the guiding phone.
-            OOCSI.send(nameOfChannel, { 'command': "switch8" });
+            OOCSI.send(nameOfChannel, {"command":"swith8","link":"step9_indu.html"});//'command': "switch8",
             window.location.href = "step9_group_guide.html";
         }
         makeConnection(receiveUnderwaterName); //login to OOCSI
