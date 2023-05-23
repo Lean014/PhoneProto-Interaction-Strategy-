@@ -34,7 +34,7 @@
 
     function winfail(timeParam) {
         if (timeParam <= 1 && timeParam >= 0) { //if less than 1 secon is left and button is pressed
-            OOCSI.send(nameOfChannel, {'command':"win"}); // net erbij gezet
+            OOCSI.send(nameOfChannel, {'command':"win"}); 
             window.location.href = "step4w_indu.html"; //go 2 win screen
             console.log("win senario");
         }
