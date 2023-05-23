@@ -23,7 +23,7 @@
     <script> // javascript
 
         function sent2OOCSIandGo2Step10() { //Go to link, step X indu, look at the guiding phone.
-            OOCSI.send(nameOfChannel, { 'command': "switch9" });
+            OOCSI.send(nameOfChannel, { 'command': "switch9", "link": "step10_indu.html" }); //command switch is now unnecesarry on indu side
             window.location.href = "step10_group_guide.html";
         }
         makeConnection(); //login to OOCSI
