@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-    <script src="functions.js"></script>
-    <script src="oocsi_lib.js"></script>
+<script src="functions.js"></script>
+<script src="oocsi_lib.js"></script>
+
 <head>
+    <link rel="stylesheet" href="styles_guide.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,58 +13,81 @@
 <script>
     let pressCountIndu2 = 0; //give variable a starting number
 
-    function buttonPressCounting (message) { // read when OOCSI send message. count how many times button is pressed on the induvidal phones
-       if (message.data.command == "+1") {
-        pressCountIndu2 ++;
-        console.log(pressCountIndu2);
-        document.getElementById("pressCount").innerHTML = pressCountIndu2;
-        addImg();
-    } 
+    function buttonPressCounting(message) { // read when OOCSI send message. count how many times button is pressed on the induvidal phones
+        if (message.data.command == "+1") {
+            pressCountIndu2++;
+            console.log(pressCountIndu2);
+            document.getElementById("pressCount").innerHTML = pressCountIndu2;
+            addImg();
+        }
     }
     function readCommand(message) {
         if (message.data.command == "water") {
-            document.getElementById("waterSpray").src="images\\workshop cards-26.png"; //only show when button is pressed
+            document.getElementById("waterSpray").src = "images\\workshop cards-26.png"; //only show when button is pressed
         }
     }
-    function onLoadPage () {
+    function onLoadPage() {
         makeConnection(buttonPressCounting); // OOCSI connection and sending valus of button press counting
     }
     window.onload = onLoadPage;
-    
+
 </script>
+
 <body>
-    <img src="images\workshop cards-01.png" alt="press button image">
-    <p>Pressed buttons:</p>
-    <p id="pressCount">0</p>
-    <div id="imgShow"></div>
 
-    <!-- show image next to indu pressed button
+    
+    <div class="colourBorder borderL1">
+        <div class="speakingBubble">
+            <h3>Pressed buttons:</h3>
+            <h2 id="pressCount">0</h2>
+        </div>
+        <div class="arrowSpeakingBubble">
+            <img src="images\speakingarrow-46.png" alt="the arrow of a speaking cloud">
+        </div>
+<div class="iduImage">
+    <img src="images\workshop cards-01.png" alt="press button image" class="responsive-img" >
+    <div id="imgShow" class="imgShowOverlay"> 
+
+    </div>
+</div>
+        </div>
+
+        <!-- show image next to indu pressed button
     <img src="images\\workshop cards-26.png" id= waterSpray alt="water spary">  -->
-    <button onclick="sent2OOCSIandGo2Step3()">Bring me to the next step!</button> 
-    <!-- between " " for JS in HTML only for onclick, inline handeler  -->
-    <script>
+    <div class="bmttns">
+        <button onclick="sent2OOCSIandGo2Step3()"><p>Bring me to the next step!</p> </button>
         
+        </div><!-- between " " for JS in HTML only for onclick, inline handeler  -->
+    </div>
+
+
+
+
+
+    <script>
+
         function addImg() { //insead of using appendChild and call in other function that reads message from OOCSI
-        //make a new img element
-        const waterSprayImg = document.createElement("img");
+            //make a new img element
+            const waterSprayImg = document.createElement("img");
 
-        //source img
-        waterSprayImg.setAttribute("src","images\\workshop cards-26.png");
+            //source img
+            waterSprayImg.setAttribute("src", "images\\workshop cards-26.png");
 
-        //html tag location
-        const location = document.getElementById("imgShow");
+            //html tag location
+            const location = document.getElementById("imgShow");
 
-        //place image on location
-        location.appendChild(waterSprayImg);
-            
+            //place image on location
+            location.appendChild(waterSprayImg);
+
         }
 
         //  function to go to next page 
         //makeConnection();
-       function sent2OOCSIandGo2Step3() {
-           OOCSI.send(nameOfChannel, {'command':"switch2", "link":"step3_indu.html"});
-           window.location.href = "step3_winfail_guide.html";
-       }
+        function sent2OOCSIandGo2Step3() {
+            OOCSI.send(nameOfChannel, { 'command': "switch2", "link": "step3_indu.html" });
+            window.location.href = "step3_winfail_guide.html";
+        }
     </script>
 </body>
+
 </html>

@@ -3,16 +3,42 @@
 <script src="functions.js"></script>
 <script src="oocsi_lib.js"></script>
 
+<head>
+    <link rel="stylesheet" href="styles_guide.css">
+</head>
+
 <body>
-    <h1>Hello, I'm the guiding phone. </h1>
-    <h2>The 1st level of the framework is the Linear mapped interactions.</h2>
-    <p>Do A &rarr; B happens</p>
-    <button onclick="sent2OOCSIandGo2Step2()"> Bring me to the next step! </button>
+    <div class="colourBorder borderL1">
+        <div class="speakingBubble">
+            <h1>Hello, I'm the guiding screen. </h1>
+            <h2> Welcome to the framework experience. Let's start!
+                The 1st level of the framework is the Linear mapped interactions.
+            </h2>
+
+        </div>
+        <div class="arrowSpeakingBubble">
+            <img src="images\speakingarrow-46.png" alt="the arrow of a speaking cloud">
+        </div>
+        <div class="levelContainer">
+            <div class="nummerIMG">
+                <img src="images\1.png" alt="number one">
+            </div>
+            <div class="levelText">
+                <h1>Linear map</h1>
+                <h3>Do A &rarr; B happens</h3>
+            </div>
+        </div>
+        <div class="bmttns">
+            <button onclick="sent2OOCSIandGo2Step2()">
+                <p>Bring me to the next step!</p>
+            </button> <!-- why is this paragraf font looking different? -->
+        </div>
+    </div>
 
     <script> // javascript
 
         function sent2OOCSIandGo2Step2() { //Go to link, step X indu, look at the guiding phone.
-            OOCSI.send(nameOfChannel, {'command':"switch1", "link":"step2_indu.html"});
+            OOCSI.send(nameOfChannel, { 'command': "switch1", "link": "step2_indu.html" });
             window.location.href = "step2_linear_guide.html";
         }
         makeConnection(); //login to OOCSI

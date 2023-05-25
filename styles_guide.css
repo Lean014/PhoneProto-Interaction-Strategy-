@@ -1,0 +1,181 @@
+.colourBorder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vw;
+    width: 100dvw;
+    height: 100vh;
+    height: 100dvh;
+    border: 10px solid ;
+    /*colour changes per level */
+    border-radius: 25px;
+    padding: 1%;
+    /* makes the right side fall off, why? */
+
+    font-family: Arial, Helvetica, sans-serif;
+    /* <h2> needs to become regular to light. now to bold */
+}
+
+.borderL1 {
+    border-color: darkolivegreen;
+}
+.borderL2{
+    border-color: greenyellow;
+}
+.borderL3{
+    border-color: darkgoldenrod;
+}
+.borderL4{
+    border-color: aquamarine;
+}
+.borderL5{
+    border-color: purple;
+}
+.borderL0{
+    border-color: orange;
+}
+
+.speakingBubble {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* width: 95%; */
+    /* height: 95%; */
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 3%;
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-right: 5%;
+    overflow-y: scroll;
+    flex: 0 0 auto;
+    overflow: hidden;
+}
+
+.arrowSpeakingBlubble {
+    display: flex;
+    justify-content: left;
+}
+
+.responsive-img {
+    flex: 1 1 0;
+    min-height: 0px;
+    object-fit: contain;
+}
+
+.img {
+    display: flex;
+    justify-content: center;
+    min-width: none;
+    align-items: stretch;
+    flex: 0 1 0;
+}
+
+.img img {
+    width: 100%;
+    object-fit: contain;
+    min-height: 0;
+}
+
+.levelContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    padding: 3%;
+    margin: 5%;
+    gap: 5%;
+
+}
+
+.nummerIMG {
+    /* display: flex; */
+    /* image stretche infulenced by marging and padding in levelContainer. how to fiks streching */
+    flex-shrink: 0;
+}
+
+.levelText {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.bmttns {
+    /* bring me to the next step! buttons */
+    display: flex;
+    height: fit-content;
+    justify-content: center;
+/* margin-bottom: 90px; */
+
+}
+
+.imgShowOverlay{
+    display: flex;
+    position: absolute;
+    flex-direction: row;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+}
+
+#iduImage {
+    display: flex;
+    flex: 1 1 0;
+    position: relative;
+}
+
+#iduImage > img {
+    flex: 1 1 0;
+    height: auto;
+    object-fit: cover;
+    min-width: 0px;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: normal;
+
+}
+
+h3 {
+    font-size: 1.5em;
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: normal;
+}
+
+h4 {
+    font-size: 1.5em;
+    margin-top: 0.83em;
+    margin-bottom: 0.83em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+body {
+    margin: 0px;
+    min-height: 100%;
+    font-size: 16px;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+button {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    border-radius: 15px;    
+}
