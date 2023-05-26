@@ -54,6 +54,15 @@
     flex: 0 0 auto;
     overflow: hidden;
 }
+.underwaterNames {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    overflow-y: scroll;
+    flex: 0 0 auto;
+    overflow: hidden;
+    padding: 10px;
+}
 
 .arrowSpeakingBlubble {
     display: flex;
@@ -120,6 +129,15 @@
     bottom: 0;
     top: 0;
 }
+.imgShowOverlayColum{
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+}
 
 .imgShowOverlay > img {
     /* > speaks only to the div box where the img is in */
@@ -129,7 +147,14 @@
     object-fit: contain;
     min-width: 0px;
 }
-
+.imgShowOverlayColum > img {
+    /* > speaks only to the div box where the img is in */
+    /* grow shink defaut size of 0 px */
+    flex: 1 1 0;
+    width: auto;
+    object-fit: contain;
+    min-height: 0px;
+}
 .induImage{
     display: flex;
     justify-content: center;
