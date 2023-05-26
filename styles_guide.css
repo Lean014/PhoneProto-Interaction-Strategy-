@@ -17,22 +17,25 @@
 }
 
 .borderL1 {
-    border-color: darkolivegreen;
+    border-color: #4D6828;
 }
 .borderL2{
-    border-color: greenyellow;
+    border-color: #8CA966;
 }
 .borderL3{
-    border-color: darkgoldenrod;
+    border-color: #d3c261;
 }
 .borderL4{
-    border-color: aquamarine;
+    border-color: #AF95C1;
 }
 .borderL5{
-    border-color: purple;
+    border-color: #6c4c95;
 }
 .borderL0{
-    border-color: orange;
+    border-color: #F19105;
+}
+.borderWhite{
+    border-color: white;
 }
 
 .speakingBubble {
@@ -43,10 +46,10 @@
     /* height: 95%; */
     border: 2px solid black;
     border-radius: 15px;
-    padding: 3%;
-    margin-top: 5%;
-    margin-left: 5%;
-    margin-right: 5%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
     overflow-y: scroll;
     flex: 0 0 auto;
     overflow: hidden;
@@ -81,9 +84,9 @@
     display: flex;
     flex-direction: row;
     justify-content: left;
-    padding: 3%;
-    margin: 5%;
-    gap: 5%;
+    padding: 10px;
+    margin: 10px;
+    gap: 25px;
 
 }
 
@@ -118,8 +121,23 @@
     top: 0;
 }
 
+.imgShowOverlay > img {
+    /* > speaks only to the div box where the img is in */
+    /* grow shink defaut size of 0 px */
+    flex: 1 1 0;
+    height: auto;
+    object-fit: contain;
+    min-width: 0px;
+}
+
+.induImage{
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
 #iduImage {
     display: flex;
+    justify-content: center;
     flex: 1 1 0;
     position: relative;
 }
@@ -127,12 +145,13 @@
 #iduImage > img {
     flex: 1 1 0;
     height: auto;
-    object-fit: cover;
+    object-fit: contain;
     min-width: 0px;
+    
 }
 
 h2 {
-    font-size: 1.5em;
+    font-size: 1em;
     margin-top: 0.83em;
     margin-bottom: 0.83em;
     margin-left: 0;

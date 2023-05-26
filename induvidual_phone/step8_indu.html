@@ -4,16 +4,21 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>step8_indu</title>
+    <link rel="stylesheet" href="../styles_guide.css">
 </head>
 <script src="../oocsi_lib.js"></script>
 <script src="../functions.js"></script>
 
 <body>
     
+<div class="colourBorder borderWhite">
     <p> Make up your underwatername and send it to the guiding phone.</p>
     <input type="text" id="h2oName" placeholder="My underwater name is ..." value="">
     <button onclick ="sendName()"> Send my underwater name! </button> 
+
+</div>
+
     <script>
         function sendName() {
             const nameInput = document.getElementById("h2oName").value;
