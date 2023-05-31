@@ -36,6 +36,7 @@
 }
 .borderWhite{
     border-color: white;
+    text-align: center;
 }
 
 .speakingBubble {
@@ -53,6 +54,8 @@
     overflow-y: scroll;
     flex: 0 0 auto;
     overflow: hidden;
+    text-align:start;
+
 }
 .underwaterNames {
     display: flex;
@@ -116,6 +119,7 @@
     display: flex;
     height: fit-content;
     justify-content: center;
+    margin-top: 10px;
 /* margin-bottom: 90px; */
 
 }
@@ -222,4 +226,11 @@ button {
     font-size: inherit;
     font-weight: inherit;
     border-radius: 15px;    
+}
+
+.uwname{
+    font-family: inherit;
+    font-size:xx-large;
+    color: #189CD9;
+    text-align:center;
 }
